@@ -1,4 +1,4 @@
-CREATE TABLE if exists User (
+CREATE TABLE if not exists User (
   UID int primary key,
   fName varchar(20),
   lName varchar(20),
@@ -7,7 +7,7 @@ CREATE TABLE if exists User (
   email varchar(40)
 );
 
-CREATE TABLE  if exists Task (
+CREATE TABLE if not exists Task (
   TID int primary key,
   shortDesc varchar(max),
   longDesc  varchar(max),
@@ -19,7 +19,7 @@ CREATE TABLE  if exists Task (
   foreign key (UID) references User(UID)
 );
 
-CREATE TABLE if exists Entry (
+CREATE TABLE if not exists Entry (
   EID int not null,
   UID int not null,
   TID int not null,
