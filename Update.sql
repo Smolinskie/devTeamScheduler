@@ -1,5 +1,5 @@
 CREATE TABLE if not exists User (
-  UID int primary key,
+  UID int auto_increment primary key,
   fName varchar(20),
   lName varchar(20),
   uName varchar(20),
@@ -8,9 +8,9 @@ CREATE TABLE if not exists User (
 );
 
 CREATE TABLE if not exists Task (
-  TID int primary key,
-  shortDesc varchar(max),
-  longDesc  varchar(max),
+  TID int auto_increment primary key,
+  shortDesc varchar(300),
+  longDesc  varchar(1000),
   devBranch varchar(40),
   dateCreated date,
   dueDate date,
@@ -20,10 +20,10 @@ CREATE TABLE if not exists Task (
 );
 
 CREATE TABLE if not exists Entry (
-  EID int not null,
+  EID int not null auto_increment,
   UID int not null,
   TID int not null,
-  description varchar(max),
+  description varchar(1000),
   dateCreated date,
   timeCreated time,
   foreign key (UID) references User(UID),
