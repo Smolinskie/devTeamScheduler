@@ -18,11 +18,30 @@ namespace devTeamScheduler
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        { 
+
+            if (Username.Text == "" )
+            {
+                System.Windows.Forms.MessageBox.Show("Please enter in a username");
+            }
+
+            if (Password.Text == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Please enter in a password");
+            }
+
+            }
+        } // end of button_click method
+
     }
-}
+
