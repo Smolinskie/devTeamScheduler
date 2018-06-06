@@ -39,9 +39,21 @@ namespace devTeamScheduler
             {
                 System.Windows.Forms.MessageBox.Show("Please enter in a password");
             }
+            else
+            {
+
+                var win2 = new Window2();
+                win2.Show();
+                this.Close();
+            }
 
             }
-        } // end of button_click method
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+    } // end of button_click method
 
     }
 
