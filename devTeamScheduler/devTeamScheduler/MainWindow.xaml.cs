@@ -1,4 +1,6 @@
-﻿using System;
+﻿using devTeamScheduler.Models;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +27,22 @@ namespace devTeamScheduler
         public MainWindow()
         {
             InitializeComponent();
+
+            Model model = new Model();
+            model.Database.CreateIfNotExists();
+            User user = new User();
+            user.fName = "Daniel";
+            user.lName = "Baker";
+            user.uName = "dbaker";
+            user.email = "danbaker951@gmail.com";
+            user.password = "testpswd";
+
+            model.Users.Add(user);
+            model.SaveChanges();
+            var list = (from u in model.Users select u).ToList();
+
+            foreach (var us in list)
+                Console.WriteLine(us.fName);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
