@@ -12,11 +12,20 @@ namespace devTeamScheduler
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+     
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            var openSelectedTask = new SelectedTask();
+            openSelectedTask.Show();
+            this.Close();
+        }
 
-          
-
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var openAssignTasks = new AssignTasks();
+            openAssignTasks.Show();
+            this.Close();
 
         }
     }

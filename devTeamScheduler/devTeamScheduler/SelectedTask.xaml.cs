@@ -26,7 +26,7 @@ namespace devTeamScheduler
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var returnToMM = new LoginScreen();
+            var returnToMM = new MyTasks();
             returnToMM.Show();
             this.Close();
 

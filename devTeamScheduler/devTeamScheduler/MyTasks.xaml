@@ -19,8 +19,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Logout" HorizontalAlignment="Left" Margin="208,271,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="208,271,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" />
         <Button Content="Contact Admin" HorizontalAlignment="Left" Margin="507,271,0,0" Grid.Row="1" VerticalAlignment="Top" Width="89"/>
         <Label Content="My Tasks:" HorizontalAlignment="Left" Margin="363,21,0,0" VerticalAlignment="Top"/>
+        <Button Name="SelectedTasksButton" Content="Selected Tasks" Margin="18,64,700,11" Click="Button_Click_1"/>
+        <Button Name="AssignTasksButton" Content="Assign tasks" HorizontalAlignment="Left" Margin="18,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" RenderTransformOrigin="-0.209,0.975" Click="Button_Click_2"/>
     </Grid>
 </Window>
