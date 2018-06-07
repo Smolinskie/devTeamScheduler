@@ -28,7 +28,7 @@ namespace devTeamScheduler
         {
             InitializeComponent();
 
-            Model model = new Model();
+/*            Model model = new Model();
             model.Database.CreateIfNotExists();
             User user = new User();
             user.fName = "Daniel";
@@ -42,8 +42,10 @@ namespace devTeamScheduler
             var list = (from u in model.Users select u).ToList();
 
             foreach (var us in list)
-                Console.WriteLine(us.fName);
-        }
+  
+    Console.WriteLine(us.fName);
+    */
+    }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         { 
