@@ -21,36 +21,36 @@ namespace devTeamScheduler
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    
+
     public partial class LoginScreen : Window
     {
         public LoginScreen()
         {
             InitializeComponent();
 
-/*            Model model = new Model();
-            model.Database.CreateIfNotExists();
-            User user = new User();
-            user.fName = "Daniel";
-            user.lName = "Baker";
-            user.uName = "dbaker";
-            user.email = "danbaker951@gmail.com";
-            user.password = "testpswd";
+            /*            Model model = new Model();
+                        model.Database.CreateIfNotExists();
+                        User user = new User();
+                        user.fName = "Daniel";
+                        user.lName = "Baker";
+                        user.uName = "dbaker";
+                        user.email = "danbaker951@gmail.com";
+                        user.password = "testpswd";
 
-            model.Users.Add(user);
-            model.SaveChanges();
-            var list = (from u in model.Users select u).ToList();
+                        model.Users.Add(user);
+                        model.SaveChanges();
+                        var list = (from u in model.Users select u).ToList();
 
-            foreach (var us in list)
-  
-    Console.WriteLine(us.fName);
-    */
-    }
+                        foreach (var us in list)
+
+                Console.WriteLine(us.fName);
+                */
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        { 
+        {
 
-            if (usernameTextBox.Text == "" )
+            if (usernameTextBox.Text == "")
             {
                 MessageBox.Show("Please enter in a username");
             }
@@ -61,13 +61,29 @@ namespace devTeamScheduler
             }
             else
             {
+                // create database model 
+                Model model = new Model();
 
-                var win2 = new MyTasks();
-                win2.Show();
-                this.Close();
+                // check if user exists in the database
+                var user = (from u in model.Users where u.uName == usernameTextBox.Text select u).ToList();
+                if (user.Count != 1) {
+                    MessageBox.Show("Invalid user name or password!", "Invalid Login");
+                    return;
+                }
+
+                // check if the password is correct
+                if (user.First().password == passwordTextBox.Text)
+                {
+                    var win2 = new MyTasks();
+                    win2.Show();
+                    this.Close();
+                }
+                else {
+                    MessageBox.Show("Invalid user name or password!", "Invalid Login");
+                }
             }
 
-            }
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -75,5 +91,5 @@ namespace devTeamScheduler
         }
     } // end of button_click method
 
-    }
+}
 
