@@ -1,6 +1,4 @@
 ﻿using System.Windows;
-using MessageBox = System.Windows.Forms.MessageBox;
-using MessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
 
 namespace devTeamScheduler
 {

@@ -50,12 +50,12 @@ namespace devTeamScheduler
 
             if (Username.Text == "" )
             {
-                System.Windows.Forms.MessageBox.Show("Please enter in a username");
+                MessageBox.Show("Please enter in a username");
             }
 
             if (Password.Text == "")
             {
-                System.Windows.Forms.MessageBox.Show("Please enter in a password");
+                MessageBox.Show("Please enter in a password");
             }
             else
             {
