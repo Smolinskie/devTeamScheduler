@@ -61,10 +61,30 @@ namespace devTeamScheduler
             }
             else
             {
+                //create database model
+                Model model = new Model();
+                //check if user exits
 
-                var win2 = new MyTasks();
-                win2.Show();
-                this.Close();
+                var user = (from u in model.Users  where u.uName == usernameTextBox.Text select u).ToList();
+                if(user.Count != 1)
+                {
+                  
+                    MessageBox.Show("Invalid username or password", "Invalid login");
+                    return;
+                }
+
+                if(user.First().password == passwordTextBox.Text)
+                {
+                    var win2 = new MyTasks();
+                    win2.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password", "Invalid login");
+                }
+
+                
             }
 
             }
