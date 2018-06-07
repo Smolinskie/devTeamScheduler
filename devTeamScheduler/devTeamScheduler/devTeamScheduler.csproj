@@ -79,16 +79,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="my_tasks.xaml.cs">
-      <DependentUpon>my_tasks.xaml</DependentUpon>
+    <Compile Include="MyTasks.xaml.cs">
+      <DependentUpon>MyTasks.xaml</DependentUpon>
     </Compile>
-    <Compile Include="assign_tasks.xaml.cs">
-      <DependentUpon>assign_tasks.xaml</DependentUpon>
+    <Compile Include="AssignTasks.xaml.cs">
+      <DependentUpon>AssignTasks.xaml</DependentUpon>
     </Compile>
-    <Compile Include="selected_task.xaml.cs">
-      <DependentUpon>selected_task.xaml</DependentUpon>
+    <Compile Include="SelectedTask.xaml.cs">
+      <DependentUpon>SelectedTask.xaml</DependentUpon>
     </Compile>
-    <Page Include="login_screen.xaml">
+    <Page Include="LoginScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -96,19 +96,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="login_screen.xaml.cs">
-      <DependentUpon>login_screen.xaml</DependentUpon>
+    <Compile Include="LoginScreen.xaml.cs">
+      <DependentUpon>LoginScreen.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="my_tasks.xaml">
+    <Page Include="MyTasks.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="assign_tasks.xaml">
+    <Page Include="AssignTasks.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="selected_task.xaml">
+    <Page Include="SelectedTask.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

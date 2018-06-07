@@ -15,22 +15,22 @@ using System.Windows.Shapes;
 namespace devTeamScheduler
 {
     /// <summary>
-    /// Interaction logic for Window3.xaml
+    /// Interaction logic for Window4.xaml
     /// </summary>
-    public partial class Window3 : Window
+    public partial class SelectedTask : Window
     {
-        public Window3()
+        public SelectedTask()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var returnToMM = new MainWindow();
+            var returnToMM = new LoginScreen();
             returnToMM.Show();
             this.Close();
-        }
 
-        
+
+        }
     }
 }

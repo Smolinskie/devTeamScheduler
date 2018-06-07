@@ -22,9 +22,9 @@ namespace devTeamScheduler
     /// </summary>
     /// 
     
-    public partial class MainWindow : Window
+    public partial class LoginScreen : Window
     {
-        public MainWindow()
+        public LoginScreen()
         {
             InitializeComponent();
 
@@ -50,19 +50,19 @@ namespace devTeamScheduler
         private void Button_Click(object sender, RoutedEventArgs e)
         { 
 
-            if (Username.Text == "" )
+            if (usernameTextBox.Text == "" )
             {
                 MessageBox.Show("Please enter in a username");
             }
 
-            if (Password.Text == "")
+            if (passwordTextBox.Text == "")
             {
                 MessageBox.Show("Please enter in a password");
             }
             else
             {
 
-                var win2 = new Window2();
+                var win2 = new MyTasks();
                 win2.Show();
                 this.Close();
             }
