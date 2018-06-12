@@ -8,13 +8,14 @@
         Title="Task_assigner" Height="504.848" Width="846.122" Background="AliceBlue">
     <Grid AutomationProperties.HelpText="Tasks description">
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="176,430,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-1.932,0.566" Click="Button_Click"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="380,430,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.533,2.158"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="380,430,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.533,2.158" Click="Button_Click_1"/>
         <TextBox HorizontalAlignment="Left" Height="213" Margin="260,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.225,-1.873" Text="tasks description"/>
-        <DatePicker HorizontalAlignment="Left" Margin="369,342,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="AssignDueDate" HorizontalAlignment="Left" Margin="369,342,0,0" VerticalAlignment="Top"/>
         <Label Content="Complete by" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="7.374,3.276" Margin="274,342,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="335,36,0,0"/>
+        <TextBox Name="TaskTextBox"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="335,36,0,0"/>
         <Button Content="Add files" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="380,384,0,0"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="335,69,0,0"/>
+        <ComboBox Name="UserDropDown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="335,69,0,0">
+        </ComboBox>
         <Label Content="User:" HorizontalAlignment="Left" Margin="291,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.032,0.344" Width="39"/>
         <Label Content="Task Name:" HorizontalAlignment="Left" Margin="260,36,0,0" VerticalAlignment="Top"/>
 

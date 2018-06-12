@@ -27,9 +27,12 @@ namespace devTeamScheduler
         public LoginScreen()
         {
             InitializeComponent();
+           
+        Model model = new Model();
 
-/*            Model model = new Model();
+            model.Database.Delete();
             model.Database.CreateIfNotExists();
+
             User user = new User();
             user.fName = "Daniel";
             user.lName = "Baker";
@@ -44,7 +47,7 @@ namespace devTeamScheduler
             foreach (var us in list)
   
     Console.WriteLine(us.fName);
-    */
+    
     }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -18,8 +18,9 @@ namespace devTeamScheduler.Models
         // If you wish to target a different database and/or database provider, modify the 'Model' 
         // connection string in the application configuration file.
         public Model()
+       
             : base("name=Model")
-        {
+        {  
         }
 
         public Model(DbConnection conn) : base(conn, false) { }
@@ -69,6 +70,8 @@ namespace devTeamScheduler.Models
         public bool completed { get; set; }
         [Required]
         public int UID { get; set; }
+        [Required]
+        public string taskName { get; set; }
     }
 
     public class Entry {       
@@ -87,5 +90,7 @@ namespace devTeamScheduler.Models
         public DateTime dateCreated { get; set; }
         [Required]
         public DateTime timeCreated { get; set; }
+        [Required]
+        public string taskName { get; set; }
     }
 }
