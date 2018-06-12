@@ -16,7 +16,7 @@ namespace devTeamScheduler
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var openSelectedTask = new SelectedTask();
+            var openSelectedTask = new SelectedTask(1);
             openSelectedTask.Show();
             this.Close();
         }

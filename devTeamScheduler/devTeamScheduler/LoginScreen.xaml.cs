@@ -28,26 +28,23 @@ namespace devTeamScheduler
         {
             InitializeComponent();
 
-            /*Model model = new Model();
+            /*            Model model = new Model();
+                        model.Database.CreateIfNotExists();
+                        User user = new User();
+                        user.fName = "Daniel";
+                        user.lName = "Baker";
+                        user.uName = "dbaker";
+                        user.email = "danbaker951@gmail.com";
+                        user.password = "testpswd";
 
-            model.Database.Delete();
-            model.Database.CreateIfNotExists();
+                        model.Users.Add(user);
+                        model.SaveChanges();
+                        var list = (from u in model.Users select u).ToList();
 
-            User user = new User();
-            user.fName = "Daniel";
-            user.lName = "Baker";
-            user.uName = "dbaker";
-            user.email = "danbaker951@gmail.com";
-            user.password = "testpswd";
+                        foreach (var us in list)
 
-            model.Users.Add(user);
-            model.SaveChanges();
-            var list = (from u in model.Users select u).ToList();
-
-            foreach (var us in list)
-  
-            Console.WriteLine(us.fName);*/
-
+                Console.WriteLine(us.fName);
+                */
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -64,29 +61,28 @@ namespace devTeamScheduler
             }
             else
             {
-                //create database model
+                // create database model 
                 Model model = new Model();
-                //check if user exits
 
+                // check if user exists in the database
                 var user = (from u in model.Users where u.uName == usernameTextBox.Text select u).ToList();
-                if (user.Count != 1)
-                {
-
-                    MessageBox.Show("Invalid username or password", "Invalid login");
+                if (user.Count != 1) {
+                    MessageBox.Show("Invalid user name or password!", "Invalid Login");
                     return;
                 }
 
+                // check if the password is correct
                 if (user.First().password == passwordTextBox.Text)
                 {
                     var win2 = new MyTasks();
                     win2.Show();
                     this.Close();
                 }
-                else
-                {
-                    MessageBox.Show("Invalid username or password", "Invalid login");
+                else {
+                    MessageBox.Show("Invalid user name or password!", "Invalid Login");
                 }
             }
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
