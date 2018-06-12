@@ -8,7 +8,7 @@ namespace devTeamScheduler
     /// <summary>
     /// Interaction logic for Window3.xaml
     /// </summary>
-    public partial class AssignTasks: Window
+    public partial class AssignTasks : Window
     {
         public AssignTasks()
         {
@@ -29,9 +29,10 @@ namespace devTeamScheduler
                 var returnToMM = new MyTasks();
                 returnToMM.Show();
                 this.Close();
-            }else
+            }
+            else
                 return;
-               
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -39,28 +40,18 @@ namespace devTeamScheduler
             //create a new instance of model
             Model model = new Model();
 
-            if (MessageBox.Show("Would you like to submit the following changes to user" + UserDropDown.SelectedItem,"Submit Changes",MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Would you like to submit the following changes to user" + UserDropDown.SelectedItem, "Submit Changes", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                //prompt the user with a message box to confirm they want the changes submitted.
-
-                model.Database.CreateIfNotExists();
+                //prompt the user with a message box to confirm they want the changes submitted.             
                 Entry entry = new Entry();
                 entry.taskName = TaskTextBox.Text;
                 //save the changes to the task database
                 model.SaveChanges();
-
             }
             else
             {
                 return;
             }
-       
-
-      
-           
-
-           
-            
         }
     }
 }

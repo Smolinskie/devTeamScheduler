@@ -21,14 +21,14 @@ namespace devTeamScheduler
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    
+
     public partial class LoginScreen : Window
     {
         public LoginScreen()
         {
             InitializeComponent();
-           
-        Model model = new Model();
+
+            /*Model model = new Model();
 
             model.Database.Delete();
             model.Database.CreateIfNotExists();
@@ -46,14 +46,14 @@ namespace devTeamScheduler
 
             foreach (var us in list)
   
-    Console.WriteLine(us.fName);
-    
-    }
+            Console.WriteLine(us.fName);*/
+
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        { 
+        {
 
-            if (usernameTextBox.Text == "" )
+            if (usernameTextBox.Text == "")
             {
                 MessageBox.Show("Please enter in a username");
             }
@@ -68,15 +68,15 @@ namespace devTeamScheduler
                 Model model = new Model();
                 //check if user exits
 
-                var user = (from u in model.Users  where u.uName == usernameTextBox.Text select u).ToList();
-                if(user.Count != 1)
+                var user = (from u in model.Users where u.uName == usernameTextBox.Text select u).ToList();
+                if (user.Count != 1)
                 {
-                  
+
                     MessageBox.Show("Invalid username or password", "Invalid login");
                     return;
                 }
 
-                if(user.First().password == passwordTextBox.Text)
+                if (user.First().password == passwordTextBox.Text)
                 {
                     var win2 = new MyTasks();
                     win2.Show();
@@ -86,11 +86,8 @@ namespace devTeamScheduler
                 {
                     MessageBox.Show("Invalid username or password", "Invalid login");
                 }
-
-                
             }
-
-            }
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -98,5 +95,5 @@ namespace devTeamScheduler
         }
     } // end of button_click method
 
-    }
+}
 
