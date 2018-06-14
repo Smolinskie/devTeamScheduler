@@ -40,6 +40,7 @@ namespace devTeamScheduler
             if (getTask.Count != 1) {
                 MessageBox.Show("Invalid Task ID, cannot open this task!", "Invalid ID");
                 Button_Click(null, null);
+                return;
             }
 
             // otherwise, get the task and store it in the Task member object
@@ -58,10 +59,58 @@ namespace devTeamScheduler
             cbEmployee.SelectedValue = task.UID;
 
             // load the entries for this task
-            LoadEntries();
+            LoadEntries();            
         }
 
         // private methods
+
+        /// <summary>
+        /// Takes the entered text and creates an entry in the database.
+        /// If no text is entered, a message is displayed to the user and 
+        /// no entry is created
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddEntry_Click(object sender, RoutedEventArgs e)
+        {
+            // make sure some text has been entered
+            if (tbAddEntry.Text.Trim() == "")
+            {
+                MessageBox.Show("There is no text for this entry.", "Cannot Create Entry");
+                tbAddEntry.Focus();
+            }
+            // if there has, create a new entry
+            else
+            {
+                Entry entry = new Entry();
+
+                // set parameters
+                entry.description = tbAddEntry.Text.Trim();
+                entry.UID = 1; //TODO: we need a way to track the user who is currently logged in
+                entry.TID = task.TID;
+                entry.dateCreated = DateTime.Now;
+
+                // model is created in the constructor, so we can add this entry and save changes to the database
+                model.Entries.Add(entry);
+                model.SaveChanges();
+
+                // clear the entry text
+                tbAddEntry.Text = "";
+
+                // lastly, reload the entry grid
+                LoadEntries();
+            }
+        }
+
+        /// <summary>
+        /// Performs a save when the "Save" button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            SaveTask();
+        }
 
         /// <summary>
         /// Performs when the cancel button is clicked. Exits this form
@@ -95,7 +144,7 @@ namespace devTeamScheduler
         /// </summary>
         private void LoadEntries() {
             // first get the entries which have this task ID from the database. 
-            entries = (from e in model.Entries where e.TID == task.TID select e).ToList();
+            entries = (from e in model.Entries where e.TID == task.TID orderby e.dateCreated descending select e).ToList();
 
             // set the grid data source as this list
             dgEntries.ItemsSource = entries;
@@ -107,8 +156,24 @@ namespace devTeamScheduler
             dgEntries.Columns[1].Visibility = Visibility.Hidden;
             dgEntries.Columns[2].Visibility = Visibility.Hidden;
             dgEntries.Columns[3].Width = DataGridLength.Auto;
-            dgEntries.Columns[4].Width = DataGridLength.SizeToCells;
-            dgEntries.Columns[5].Width = DataGridLength.SizeToCells;*/
+            dgEntries.Columns[4].Width = DataGridLength.SizeToCells; */
+        }
+
+        /// <summary>
+        /// Saves any modifications to the task
+        /// </summary>
+        private void SaveTask() {
+            // set values
+            task.UID = (int)cbEmployee.SelectedValue;
+            task.devBranch = tbBranch.Text.Trim();
+            task.dateDue = Convert.ToDateTime(dpDueDate.Text);
+            task.longDesc = tbDescription.Text.Trim();
+
+            // model was created in the database and task is a reference object, so we only need to save changes
+            model.SaveChanges();
+
+            // notify the user that the changes have been saved
+            MessageBox.Show("Task has been updated successfully", "Changes Saved");
         }
     }
 }

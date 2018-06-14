@@ -44,7 +44,7 @@ namespace devTeamScheduler
             {
                 //prompt the user with a message box to confirm they want the changes submitted.             
                 Entry entry = new Entry();
-                entry.taskName = TaskTextBox.Text;
+                //entry.taskName = TaskTextBox.Text;
                 //save the changes to the task database
                 model.SaveChanges();
             }

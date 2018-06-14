@@ -20,7 +20,8 @@ namespace devTeamScheduler.Models
         public Model()
        
             : base("name=Model")
-        {  
+        {                      
+            Database.CreateIfNotExists();
         }
 
         public Model(DbConnection conn) : base(conn, false) { }
@@ -70,12 +71,10 @@ namespace devTeamScheduler.Models
         public bool completed { get; set; }
         [Required]
         public int UID { get; set; }
-        [Required]
-        public string taskName { get; set; }
     }
 
     public class Entry {       
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(Order=1)]
         public int EID { get; set; }
         [Key]
@@ -88,9 +87,5 @@ namespace devTeamScheduler.Models
         public string description { get; set; }
         [Required]
         public DateTime dateCreated { get; set; }
-        [Required]
-        public DateTime timeCreated { get; set; }
-        [Required]
-        public string taskName { get; set; }
     }
 }
