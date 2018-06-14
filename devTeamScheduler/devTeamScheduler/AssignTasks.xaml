@@ -9,15 +9,18 @@
     <Grid AutomationProperties.HelpText="Tasks description">
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="176,430,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-1.932,0.566" Click="Button_Click"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="380,430,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.533,2.158" Click="Button_Click_1"/>
-        <TextBox HorizontalAlignment="Left" Height="213" Margin="260,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.225,-1.873" Text="tasks description"/>
+        <TextBox Name="TaskDescriptionTextBox" HorizontalAlignment="Left" Height="213" Margin="260,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.225,-1.873" Text="tasks description"/>
         <DatePicker Name="AssignDueDate" HorizontalAlignment="Left" Margin="369,342,0,0" VerticalAlignment="Top"/>
         <Label Content="Complete by" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="7.374,3.276" Margin="274,342,0,0"/>
-        <TextBox Name="TaskTextBox"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="335,36,0,0"/>
-        <Button Content="Add files" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="380,384,0,0"/>
-        <ComboBox Name="UserDropDown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="335,69,0,0">
+        <TextBox Name="TaskTextBox"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="335,15,0,0"/>
+        <Button Name="AddFileButton" Content="Add files" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="380,384,0,0"/>
+        <ComboBox Name="UserDropDown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="335,82,0,0">
         </ComboBox>
-        <Label Content="User:" HorizontalAlignment="Left" Margin="291,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.032,0.344" Width="39"/>
-        <Label Content="Task Name:" HorizontalAlignment="Left" Margin="260,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="User:" HorizontalAlignment="Left" Margin="254,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.032,0.344" Width="70"/>
+        <Label Content="Task Name:" HorizontalAlignment="Left" Margin="254,12,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dev Branch:" HorizontalAlignment="Left" Margin="254,43,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="DevBranchTextBox" HorizontalAlignment="Left" Height="23" Margin="332,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="148,202,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_2"/>
 
     </Grid>
 </Window>
