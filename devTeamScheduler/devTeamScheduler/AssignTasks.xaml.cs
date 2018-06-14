@@ -37,22 +37,22 @@ namespace devTeamScheduler
             }
             else
                 return;
+        }
 
-        
-            /*
+
         private void CheckFields()
         {
 
-           
+            /*
             String[] textBoxes = { TaskTextBox.Text, DevBranchTextBox.Text, TaskDescriptionTextBox.Text };
 
-            if (textBoxes.ToString.isNullOrWhiteSpace)
+            if (textBoxes.ToString().isNullOrWhiteSpace())
             {
                 MessageBox.Show("Hi");
             }
-
+            */
         }
-        */
+    
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
