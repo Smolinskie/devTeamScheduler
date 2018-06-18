@@ -65,7 +65,7 @@ namespace devTeamScheduler
                 //create a new instance of Task to save the data to the task table                
                 Task task = new Task();
 
-                task.taskName = TaskTextBox.Text;
+                task.shortDesc = TaskTextBox.Text;
                 task.UID = (int)UserDropDown.SelectedValue;
                 task.devBranch = DevBranchTextBox.Text;
                 task.longDesc = TaskDescriptionTextBox.Text;
