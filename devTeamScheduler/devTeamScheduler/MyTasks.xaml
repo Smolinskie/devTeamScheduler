@@ -5,24 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:devTeamScheduler"
         mc:Ignorable="d"
-        Title="Main_menu" Height="450" Width="800" Background="AliceBlue">
+        Title="Dev Team Scheduler" Height="597" Width="900" Background="AliceBlue">
 
-    <Grid>
+    <Grid MinWidth="900" MinHeight="600">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="568*"/>
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="95*"/>
             <RowDefinition Height="324*"/>
         </Grid.RowDefinitions>
-        <ListView HorizontalAlignment="Left" Height="312" Margin="208,47,0,0" VerticalAlignment="Top" Width="388" Grid.RowSpan="2">
+        <ListView HorizontalAlignment="Left" Height="312" Margin="102,47,0,0" VerticalAlignment="Top" Width="280" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Logout" HorizontalAlignment="Left" Margin="208,271,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" />
-        <Button Content="Contact Admin" HorizontalAlignment="Left" Margin="507,271,0,0" Grid.Row="1" VerticalAlignment="Top" Width="89"/>
-        <Label Content="My Tasks:" HorizontalAlignment="Left" Margin="363,21,0,0" VerticalAlignment="Top"/>
-        <Button Name="SelectedTasksButton" Content="Selected Tasks" Margin="18,64,700,11" Click="Button_Click_1"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="102,271,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" />
+        <Button Content="Contact Admin" HorizontalAlignment="Left" Margin="293,271,0,0" Grid.Row="1" VerticalAlignment="Top" Width="89"/>
+        <Label Content="My Tasks:" HorizontalAlignment="Left" Margin="205,21,0,0" VerticalAlignment="Top"/>
+        <Button Name="SelectedTasksButton" Content="Selected Tasks" Margin="18,69,0,0" Click="Button_Click_1" Width="74" Height="19" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button Name="AssignTasksButton" Content="Assign tasks" HorizontalAlignment="Left" Margin="18,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" RenderTransformOrigin="-0.209,0.975" Click="Button_Click_2"/>
+        <TabControl x:Name="TabController" Margin="464,21,22,46" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

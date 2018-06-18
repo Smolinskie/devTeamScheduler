@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="Login_screen" Height="350" Width="525">
     <Grid RenderTransformOrigin="0.512,0.478" Margin="0,0,-8,-0.5" VerticalAlignment="Center" Background="AliceBlue" Height="323">
-        <Button Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="180,175,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="26"/>
 
         <TextBox Name="usernameTextBox" HorizontalAlignment="Left" Height="23" Margin="180,91,0,0" TextWrapping="Wrap" Text="" Width="170" VerticalAlignment="Top"/>
         <Label   Content="Username:" HorizontalAlignment="Left" Margin="180,65,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="180,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-0.257" Height="23" Width="66"/>
-        <Button  Name="exitButton" Content="Exit" HorizontalAlignment="Left" Margin="275,175,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="Button_Click_1" RenderTransformOrigin="0.998,-0.022"/>
         <PasswordBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="180,141,0,0" VerticalAlignment="Top" Width="170" Height="23"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="180,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-0.257" Height="23" Width="66"/>
+        <Button Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="180,175,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="26"/>
+        <Button  Name="exitButton" Content="Exit" HorizontalAlignment="Left" Margin="275,175,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="Button_Click_1" RenderTransformOrigin="0.998,-0.022"/>
 
     </Grid>
 </Window>
