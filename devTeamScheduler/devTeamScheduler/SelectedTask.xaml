@@ -21,7 +21,7 @@
             <Grid>
                 <TextBox x:Name="tbAddEntry" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" Margin="10,10,0,0"/>
                 <Button x:Name="btnAddEntry" Content="Add Entry" HorizontalAlignment="Left" Margin="387,57,0,0" VerticalAlignment="Top" Width="113" RenderTransformOrigin="0.791,0.731" Click="btnAddEntry_Click"  />
-                <DataGrid x:Name="dgEntries" HorizontalAlignment="Left" Height="140" Margin="10,83,0,0" VerticalAlignment="Top" Width="490" RowHeight="20" KeyboardNavigation.IsTabStop="False"/>
+                <DataGrid x:Name="dgEntries" HorizontalAlignment="Left" Height="140" Margin="8,77,0,0" VerticalAlignment="Top" Width="490" RowHeight="20" KeyboardNavigation.IsTabStop="False"/>
             </Grid>
         </GroupBox>
 
