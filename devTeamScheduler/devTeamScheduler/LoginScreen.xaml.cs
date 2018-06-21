@@ -49,13 +49,12 @@ namespace devTeamScheduler
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            // make sure the user has entered input for both user name and password
             if (usernameTextBox.Text == "")
             {
                 MessageBox.Show("Please enter in a username");
             }
-
-            if (passwordTextBox.Text == "")
+            else if (passwordTextBox.Password == "")
             {
                 MessageBox.Show("Please enter in a password");
             }
@@ -72,8 +71,12 @@ namespace devTeamScheduler
                 }
 
                 // check if the password is correct
-                if (user.First().password == passwordTextBox.Text)
+                if (user.First().password == passwordTextBox.Password)
                 {
+                    // set the global session user variable to the selected user
+                    Session.currentUser = user.First();
+
+                    // open the MyTasks form
                     var win2 = new MyTasks();
                     win2.Show();
                     this.Close();
@@ -89,6 +92,7 @@ namespace devTeamScheduler
         {
             Environment.Exit(0);
         }
+
     } // end of button_click method
 
 }
